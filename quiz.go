@@ -76,7 +76,7 @@ func main() {
 
 	// get command line args
 	csvPtr := flag.String("csv", "problems.csv", "a csv file in the format of 'question,answer'")
-	limitPtr := flag.Int("limit", 1, "the time limit for the quiz in seconds")
+	limitPtr := flag.Int("limit", 30, "the time limit for the quiz in seconds")
 	flag.Parse()
 
 	// read CSV
@@ -85,5 +85,4 @@ func main() {
 	// run Quiz
 	score, numQs := runQuiz(csv, *limitPtr)
 	fmt.Printf("\nYou scored %d out of %d.", score, numQs)
-
 }
